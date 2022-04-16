@@ -56,5 +56,29 @@
 			</div>
 		</div>
 	</div>
+	  <div align="center">
+            <h1>Contact List</h1>
+            <h3><a href="/BaiTap2/newContact">New Contact</a></h3>
+            <table border="1">
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Action</th>
+                 
+                <c:forEach var="user" items="${listUser}" varStatus="status">
+                <tr>
+                    <td>${status.index + 1}</td>
+             
+                    <td>${user.email}</td>
+                    <td>${user.address}</td>
+                    <td>${user.phone}</td>
+                  
+                             
+                </tr>
+                </c:forEach>             
+            </table>
+        </div>
 	<script src="/nono-course/assets/user/js/common.js"></script>
 </body>

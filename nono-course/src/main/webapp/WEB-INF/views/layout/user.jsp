@@ -2,67 +2,75 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<!-- Basic -->
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!-- Mobile Metas -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<!-- Site Metas -->
-<link rel="icon" href="images/fevicon.png" type="image/gif" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name="author" content="" />
+<title>Nono_Course</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<title>Nono-Course</title>
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon" />
 
-
-<!-- bootstrap core css -->
-<%-- <link href="<c:url value = "/assets/user/css/bootstrap.css"</c:url>" rel="stylesheet"/> --%>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<!-- fonts style -->
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
-	href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
 	rel="stylesheet" />
 
-<!-- font awesome style -->
-<%-- <link href="<c:url value = "/assets/user/css/font-awesome.min.css" </c:url>" rel="stylesheet" /> --%>
-<!-- Custom styles for this template --> 
-<link href="<c:url value = "/assets/user/css/style.css"></c:url>" rel="stylesheet" />
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet" />
 
+<!-- Libraries Stylesheet -->
+<%-- <link href="<c:url value = "/assets/user/lib/animate/animate.min.css" </c:url>" rel="stylesheet" /> --%>
+<link
+	href="<c:url value = "/assets/user/lib/owlcarousel/assets/owl.carousel.min.css"></c:url>"
+	rel="stylesheet" />
 
-<!-- responsive style -->
-<%-- <link href="<c:url value = "/assets/user/css/responsive.css"</c:url>" rel="stylesheet" />
-  --%>
+<!-- Customized Bootstrap Stylesheet -->
+<link href="<c:url value = "/assets/user/css/style.css"></c:url>"
+	rel="stylesheet" />
 </head>
 
 <body>
-	
+
+
 	<%@include file="/WEB-INF/views/layout/partial-user/header.jsp"%>
 	<decorator:body />
 	<%@include file="/WEB-INF/views/layout/partial-user/footer.jsp"%>
 
 	
+	<!-- Carousel Start -->
+	
 
+	
 
-	<!-- jQery -->
-	<script src="/nono-course/assets/user/js/jquery-3.4.1.min.js"></script>
-	<!-- bootstrap js -->
-	<script src="/nono-course/assets/user/js/bootstrap.js"></script>
-	<!-- custom js -->
-	<script src="/nono-course/assets/user/js/custom.js"></script>
-	<!-- Google Map -->
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-primary back-to-top"><i
+		class="fa fa-angle-double-up"></i></a>
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-	<!-- End Google Map -->
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="<c:url value = "/assets/user/lib/easing/easing.min.js"></c:url>"></script>
+	<script
+		src="<c:url value = "/assets/user/lib/owlcarousel/owl.carousel.min.js"></c:url>"></script>
 
+	<!-- Contact Javascript File -->
+	<script
+		src="<c:url value = "/assets/user/mail/jqBootstrapValidation.min.js"></c:url>"></script>
+	<script src="<c:url value = "/assets/user/mail/contact.js"></c:url>"></script>
+
+	<!-- Template Javascript -->
+	<script
+		src="<c:url value = "/assets/user/js/main.js"></c:url>js/main.js"></script>
 </body>
-
 </html>

@@ -6,6 +6,11 @@
 	<packaging>war</packaging>
 
 
+	<properties>
+		<spring.version>5.0.2.RELEASE</spring.version>
+		<jstl.version>1.2</jstl.version>
+	</properties>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
@@ -62,7 +67,23 @@
 		</dependency>
 
 
-		
+		<!-- MySQL -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
 
 
 	</dependencies>

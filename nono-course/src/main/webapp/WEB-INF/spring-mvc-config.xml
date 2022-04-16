@@ -4,23 +4,56 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="        
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation=" 
+	http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd       
 	http://www.springframework.org/schema/beans        
 	http://www.springframework.org/schema/beans/spring-beans.xsd        
 	http://www.springframework.org/schema/mvc        
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd        
 	http://www.springframework.org/schema/context        
 	http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<context:component-scan
-		base-package="nono" />
-	
+
+	<context:component-scan base-package="nono" />
+
 	<context:annotation-config />
 	<mvc:annotation-driven />
-	
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />			
-		<mvc:resources mapping="assets/**" location="/assets/" 
-		cache-period="1000"></mvc:resources> 
+		p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
+	<mvc:resources mapping="assets/**" location="/assets/"
+		cache-period="1000"></mvc:resources>
+
+
+
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/resource/jdbc.properties</value>
+		</property>
+	</bean>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+
+
+	<!-- Creating TransactionManager Bean, since JDBC we are creating of type 
+		DataSourceTransactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>
