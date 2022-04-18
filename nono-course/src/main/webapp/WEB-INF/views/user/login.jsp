@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <body>
@@ -27,23 +29,24 @@
 						</div>
 
 					</div>
-					<form class="login-form">
-						<input type="Tendangnhap" class="auth-form-input"
-							placeholder="Tên tài khoản">
+					<form:form class="login-form" action="loginProcess" method="POST" modelAttribute="login">
+						<form:input type="Tendangnhap" class="auth-form-input"
+							placeholder="Tên tài khoản" path="username"/>
 						<div class="input-icon">
-							<input type="matkhau" class="auth-form-input"
-								placeholder="Mật khẩu"> <i
-								class="fa fa-eye show-password"></i>
+							<form:input type="matkhau" class="auth-form-input"
+								placeholder="Mật khẩu" path="password"/>
+							<i class="fa fa-eye show-password">
 						</div>
 						<label class="btn active"> <input type="checkbox"
 							name='email1' checked> <i class="fa fa-square-o"></i><i
 							class="fa fa-check-square-o"></i> <span> Ghi nhớ mật khẩu.</span>
 						</label>
 						<div class="footer-action">
-							<input type="submit" value="Đăng nhập" class="auth-submit">
+						<input type="submit" value="Đăng nhập" class="auth-submit">
+							<!-- <input type="submit" value="Đăng nhập" class="auth-submit"> -->
 							<a href="/nono-course/singup" class="auth-btn-direct">Đăng ký</a>
 						</div>
-					</form>
+					</form:form>
 					<div class="auth-forgot-password">
 						<a href="#">Quên mật khẩu</a>
 					</div>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
@@ -31,17 +31,22 @@
 						</div>
 						<p class="auth-sgt">Sử dụng Email để đăng ký:</p>
 					</div>
-					<form class="login-form">
-						<input type="text" class="auth-form-input"
-							placeholder="Tên tài khoản"> <input type="email"
-							class="auth-form-input" placeholder="Email">
+					<form:form action="saveuser" method="post" modelAttribute="user" class="login-form">
+					 <form:hidden path="IdUser"/>
+					
+						<form:input path="UserName"  type="text" class="auth-form-input"
+							placeholder="Tên tài khoản"/> 
+							<form:input path="Email"
+							class="auth-form-input" placeholder="Email"/>
+							
+							
+							
 						<div class="input-icon">
-							<input type="matkhau" class="auth-form-input"
-								placeholder="Mật khẩu"> <i
-								class="fa fa-eye show-password"></i>
+							<form:input path="Password"
+							class="auth-form-input" placeholder="Mật Khẩu"/>
 						</div>
-						<input type="matkhau" class="auth-form-input"
-							placeholder="Xác nhận mật khẩu"> <label
+						<form:input path="Phone"
+							class="auth-form-input" placeholder="Số điện thoại"/> <label
 							class="btn active"> <input type="checkbox" name='email1'
 							checked> <i class="fa fa-square-o"></i><i
 							class="fa fa-check-square-o"></i> <span> Tôi đồng ý với
@@ -53,7 +58,7 @@
 							<input type="submit" value="Đăng ký" class="auth-submit">
 							<a href="/nono-course/login" class="auth-btn-direct">Đăng nhập</a>
 						</div>
-					</form>
+					</form:form>
 				</div>
 			</div>
 			<div class="auth-action-right">
