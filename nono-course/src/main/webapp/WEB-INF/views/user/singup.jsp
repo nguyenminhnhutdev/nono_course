@@ -58,7 +58,7 @@
 			</div>
 			<div class="auth-action-right">
 				<div class="auth-image">
-					<img src="/nono-course/assets/user/images/demo.png" alt="login">
+					<img src="/nono-course/assets/user/img/demo.png" alt="login">
 				</div>
 			</div>
 		</div>

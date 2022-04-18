@@ -17,7 +17,7 @@
 			<form action="">
 				<div class="input-group">
 					<input type="text" class="form-control"
-						placeholder="Search for products" />
+						placeholder="Tìm kiếm khóa học..." />
 					<div class="input-group-append">
 						<span class="input-group-text bg-transparent text-primary">
 							<i class="fa fa-search"></i>
@@ -27,8 +27,8 @@
 			</form>
 		</div>
 		<div class="col-lg-4 col-6 text-right">
-			<p class="m-0">Customer Service</p>
-			<h5 class="m-0">+012 345 6789</h5>
+			<p class="m-0">Thông tin liên hệ:</p>
+			<h5 class="m-0">083 683 4345</h5>
 		</div>
 	</div>
 </div>
@@ -43,7 +43,7 @@
 				data-toggle="collapse" href="#navbar-vertical"
 				style="height: 65px; padding: 0 30px">
 				<h6 class="text-dark m-0">
-					<i class="fa fa-bars mr-2"></i>Categories
+					<i class="fa fa-bars mr-2"></i>Danh Mục
 				</h6> <i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<nav
@@ -87,7 +87,7 @@
 				<div class="collapse navbar-collapse justify-content-between"
 					id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
-						<a href="index.html" class="nav-item nav-link active">Home</a> <a
+						<a href="/nono-course" class="nav-item nav-link active">Trang chủ</a> <a
 							href="shop.html" class="nav-item nav-link">Shop</a> <a
 							href="detail.html" class="nav-item nav-link">Shop Detail</a>
 						<div class="nav-item dropdown">
@@ -102,11 +102,14 @@
 						<a href="contact.html" class="nav-item nav-link">Contact</a>
 					</div>
 					<div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+						<a href="/nono-course/login" class="text-primary">Đăng nhập</a>/
+						<a href="/nono-course/singup" class="text-primary">Đăng ký</a>
 						<a href="" class="btn px-0"> <i
 							class="fas fa-heart text-primary"></i> <span
 							class="badge text-secondary border border-secondary rounded-circle"
 							style="padding-bottom: 2px">0</span>
-						</a> <a href="" class="btn px-0 ml-3"> <i
+						</a> 
+						<a href="" class="btn px-0 ml-3"> <i
 							class="fas fa-shopping-cart text-primary"></i> <span
 							class="badge text-secondary border border-secondary rounded-circle"
 							style="padding-bottom: 2px">0</span>

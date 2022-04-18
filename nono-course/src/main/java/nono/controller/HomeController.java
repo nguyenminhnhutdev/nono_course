@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import nono.dao.ProductsDao;
 import nono.dao.UserDAO;
 import nono.entity.UserEntity;
 
@@ -16,15 +17,17 @@ import nono.entity.UserEntity;
 @Controller
 public class HomeController {
 	
-	
+	@Autowired
+	ProductsDao productDao;
 
 	
 	@RequestMapping(value = {"/", "home", "trang-chu"}, method = RequestMethod.GET)
 	public ModelAndView Index() {
 		ModelAndView  mv = new ModelAndView("user/index");
+		mv.addObject("showProducts", productDao.GetDataProducts());
 		return mv;
-		//return "user/test";
 	}
+	
 	@RequestMapping(value = {"login", "dang-nhap"}, method = RequestMethod.GET)
 	public ModelAndView Login() {
 		ModelAndView  mv = new ModelAndView("user/login");
