@@ -35,8 +35,25 @@ public class HomeController {
 //	}
 //	
 	
-	@RequestMapping(value = {"/admin", "quan-tri"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/admin/", "/admin/login", "/quan-tri/dang-nhap"}, method = RequestMethod.GET)
+	public String Admin_login() {
+		return "admin/login";
+	}
+	
+	@RequestMapping(value = {"/admin/home", "quan-tri/trang-chu"}, method = RequestMethod.GET)
 	public String Admin() {
 		return "admin/index";
+	}
+	
+	@RequestMapping(value = {"/admin/form", "quan-tri/cap-nhat-kh"}, method = RequestMethod.GET)
+	public String Admin_form() {
+		return "admin/form";
+	}
+	
+	@RequestMapping(value = {"/admin/products", "quan-tri/cn-khoahoc"}, method = RequestMethod.GET)
+	public ModelAndView Admin_products() {
+		ModelAndView  mv = new ModelAndView("admin/products");
+		mv.addObject("showProducts", productDao.GetDataProducts());
+		return mv;
 	}
 }
