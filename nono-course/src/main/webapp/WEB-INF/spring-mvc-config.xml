@@ -41,5 +41,6 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	 <bean id="userDao" class="nono.DAOImpl.UserDAOImpl"></bean>
+	  <bean id="categoryDao" class="nono.DAOImpl.CategoryDAOImpl"></bean>
 
 </beans>

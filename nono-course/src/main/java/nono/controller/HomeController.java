@@ -1,15 +1,17 @@
 package nono.controller;
 
-
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import nono.dao.CategoryDAO;
 import nono.dao.ProductsDao;
-
+import nono.entity.*;
 
 
 
@@ -18,12 +20,15 @@ public class HomeController {
 	
 	@Autowired
 	ProductsDao productDao;
+	@Autowired
+	CategoryDAO categoryDao;
 
 	
 	@RequestMapping(value = {"/", "home", "trang-chu"}, method = RequestMethod.GET)
 	public ModelAndView Index() {
 		ModelAndView  mv = new ModelAndView("user/index");
 		mv.addObject("showProducts", productDao.GetDataProducts());
+		mv.addObject("categorys", categoryDao.getAllCategory()) ;
 		return mv;
 	}
 	
@@ -56,4 +61,35 @@ public class HomeController {
 		mv.addObject("showProducts", productDao.GetDataProducts());
 		return mv;
 	}
+	
+	@RequestMapping(value = "/deleteContact", method = RequestMethod.GET)
+	public ModelAndView deleteContact(HttpServletRequest request) {
+	    int contactId = Integer.parseInt(request.getParameter("id"));
+	    productDao.delete(contactId);
+	    return new ModelAndView("redirect:admin/products");
+	}
+	@RequestMapping(value = "/newcorse", method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+	    Products newContact = new Products();
+	    model.addObject("coures", newContact);
+	    model.setViewName("admin/addCourse");
+	    return model;
+	}
+	
+	@RequestMapping(value = "/savecorse", method = RequestMethod.POST)
+	public ModelAndView saveContact(@ModelAttribute Products contact) {
+		productDao.saveOrUpdate(contact);
+	    return new ModelAndView("redirect:admin/products");
+	}
+	@RequestMapping(value = "/editProduct", method = RequestMethod.GET)
+	public ModelAndView editContact(HttpServletRequest request) {
+	    int contactId = Integer.parseInt(request.getParameter("id"));
+	    Products contact = productDao.get(contactId);
+	    ModelAndView model = new ModelAndView("admin/addCourse");
+	    model.addObject("coures", contact);
+	 
+	    return model;
+	}
+	
+		
 }

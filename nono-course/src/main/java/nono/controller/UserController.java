@@ -34,15 +34,21 @@ public class UserController {
 	 @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
 	  @ModelAttribute Login login) {
-	    ModelAndView mav = null;
-	    UserEntity user = userDao.validateUser(login);
+		 ModelAndView mav = null;
+		 if(login.getUsername()=="" || login.getPassword() =="") {
+			 mav =  new ModelAndView("redirect:/");
+		 }else {
+			 UserEntity user = userDao.validateUser(login);
 
-	    if (null != user) {
-	    	 mav =  new ModelAndView("redirect:/");
-	    } else {
-	    	mav = new ModelAndView("login");
-	        
-	    }
+			    if (null != user) {
+			    	 mav =  new ModelAndView("redirect:/");
+			    } else {
+			    	mav = new ModelAndView("login");
+			        
+			    }
+		 }
+	   
+	   
 	    return mav;
 	  }
 

@@ -1,7 +1,7 @@
 package nono.entity;
 
 public class Products {
-	private String IdCourse;
+	private int IdCourse;
 	private String NameCourse;
 	private String IdCategory;
 	private String DateCreate;
@@ -16,11 +16,11 @@ public class Products {
 		super();
 	}
 
-	public String getIdCourse() {
+	public int getIdCourse() {
 		return IdCourse;
 	}
 
-	public void setIdCourse(String idCourse) {
+	public void setIdCourse(int idCourse) {
 		IdCourse = idCourse;
 	}
 

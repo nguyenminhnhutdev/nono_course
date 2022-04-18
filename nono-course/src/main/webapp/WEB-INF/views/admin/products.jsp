@@ -107,6 +107,7 @@
 					            </div>
 					            <!-- Modal content -->
 					            <div class="p-3">
+					            <!-- Form thêm sản phẩm -->
 					                <form class="w-full">
 							            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
 							            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
@@ -166,6 +167,7 @@
                             <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
                                 Thông tin các khóa học
                             </div>
+                               <a href="/nono-course/newcorse">Thêm khóa học</a>
                             <div class="p-3">
                                 <table class="table-responsive w-full rounded">
                                 
@@ -198,9 +200,80 @@
 	                                            <td class="border px-4 py-2">${item.banner }</td>
 	                                            <td class="border px-4 py-2">${item.price }</td>
 	                                            <td class="border px-4 py-2">
-	                                                <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+	                                                  <a href="/nono-course/editProduct?id=${item.idCourse}" data-modal='toppedModalUp'
+                        							class="modal-trigger bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
 	                                                        <i class="fas fa-edit"></i></a>
-	                                                <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+	                                                  <!--  -->
+	                                                  <!-- bỏ code ở dòng này -->
+	                                                        <!-- gọi giao diện chỉnh sửa thông tin -->
+	                                                        <div id='toppedModalUp' class="modal-wrapper">
+										                    	<div class="overlay close-modal"></div>
+											                    <div class="modal">
+											                    	<div class="modal-content shadow-lg p-5">
+															            <div class="border-b p-2 pb-3 pt-0 mb-4">
+															               <div class="flex justify-between items-center">
+															                    Chỉnh sửa thông tin khóa học mới
+															                    <span class='close-modal cursor-pointer px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200'>
+															                        <i class="fas fa-times text-gray-700"></i>
+															                    </span>
+															               </div>
+															            </div>
+															            <!-- Modal content -->
+															            <div class="p-3">
+															            <!-- Form cập nhật sản phẩm -->
+															                <form class="w-full">
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Tên khóa học" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Mã Danh mục" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Ngày phát hành" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Tác Giả" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Ngày chỉnh sửa" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Hình ảnh" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Loại" aria-label="Full name">
+																	
+																	            </div>
+																	            <div class="flex items-center border-b border-b-1 border-teal-500 py-2">
+																	            	<input class="appearance-none bg-transparent border-none w-full text-gray-600 mr-3 py-1 px-2 lineHeight-tight focus:outline-none"
+																	                                               type="text" placeholder="Giá" aria-label="Full name">
+																	
+																	            </div>  
+															            	</form><br/>
+															            	<button class="flex-shrink-0 bg-teal-500 hover:bg-teal-dark-700 border-teal-500 hover:border-teal-dark text-sm border-4 text-white py-1 px-2 rounded"
+										                        			type="button" style="width:100%;margin:auto">
+										                    				Cập nhật
+										                					</button>
+															            </div>
+															        </div>
+											                    </div>
+										                    </div>
+	                                                        <!-- kết thúc -->
+	                                                  <!--  -->
+	                                                <a href="/nono-course/deleteContact?id=${item.idCourse}" class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
 	                                                        <i class="fas fa-trash"></i>
 	                                                </a>
 	                                            </td>
