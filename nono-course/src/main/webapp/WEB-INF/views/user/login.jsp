@@ -35,7 +35,7 @@
 						<div class="input-icon">
 							<form:input type="matkhau" class="auth-form-input"
 								placeholder="Mật khẩu" path="password"/>
-							<i class="fa fa-eye show-password">
+							<i class="fa fa-eye show-password"> </i> 
 						</div>
 						<label class="btn active"> <input type="checkbox"
 							name='email1' checked> <i class="fa fa-square-o"></i><i
