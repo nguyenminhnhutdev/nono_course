@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,10 +26,12 @@ public class HomeController {
 
 	
 	@RequestMapping(value = {"/", "home", "trang-chu"}, method = RequestMethod.GET)
-	public ModelAndView Index() {
+	public ModelAndView Index(ModelMap modelMap) {
 		ModelAndView  mv = new ModelAndView("user/index");
-		mv.addObject("showProducts", productDao.GetDataProducts());
-		mv.addObject("categorys", categoryDao.getAllCategory()) ;
+//		mv.addObject("showProducts", productDao.GetDataProducts());
+//		mv.addObject("categorys", categoryDao.getAllCategory()) ;
+		ProductModel productModel = new ProductModel();
+	modelMap.put("products", productModel.findAll());
 		return mv;
 	}
 	
@@ -90,6 +93,15 @@ public class HomeController {
 	 
 	    return model;
 	}
+	
+	
+//	@RequestMapping(value = { "product", "san-pham" }, method = RequestMethod.GET)
+//	public String index(ModelMap modelMap) {
+//		ProductModel productModel = new ProductModel();
+//		modelMap.put("products", productModel.findAll());
+//		return "user/index";
+//	}
+	
 	
 		
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <body>
 	<div class="container-fluid mb-3">
 		<div class="row px-xl-5">
@@ -261,7 +261,7 @@
 		<div class="row px-xl-5">
 			<!--  -->
 			<!--  -->
-			<c:forEach var="item" items="${ showProducts }" varStatus="index">
+			<c:forEach var="product" items="${ products }" varStatus="index">
 				<c:if test="${ index.first }">
 
 				</c:if>
@@ -273,9 +273,10 @@
 				<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
 					<div class="product-item bg-light mb-4">
 						<div class="product-img position-relative overflow-hidden">
-							<img class="img-fluid w-100" src="${item.image }" alt="" />
+							<img class="img-fluid w-100" src="${product.photo }" alt="" />
 							<div class="product-action">
-								<a class="btn btn-outline-dark btn-square" href=""><i
+							
+								<a class="btn btn-outline-dark btn-square" href="${pageContext.request.contextPath }/cart/buy/${product.id}"><i
 									class="fa fa-shopping-cart"></i></a> <a
 									class="btn btn-outline-dark btn-square" href=""><i
 									class="far fa-heart"></i></a> <a
@@ -287,12 +288,17 @@
 						</div>
 						<div class="text-center py-4">
 							<a class="h6 text-decoration-none text-truncate"
-								href='<c:url value="/product-detail/${item.idCourse}"></c:url> '>Tên:${item.nameCourse }</a>
+								href='<c:url value="/product-detail/${item.idCourse}"></c:url> '>${product.name }</a>
 							<div
 								class="d-flex align-items-center justify-content-center mt-2">
-								<h5>Giá:${item.price }</h5>
+								<h5>Giá:
+								
+								 <fmt:formatNumber type="number" pattern="###,###,###.##"
+												value="${product.price }" /> VNĐ
+								</h5>
 								<h6 class="text-muted ml-2">
-									<del>${item.price }</del>
+									<del><fmt:formatNumber type="number" pattern="###,###,###.##"
+												value="${product.price }" /> VNĐ</del>
 								</h6>
 							</div>
 							<div
