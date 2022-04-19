@@ -2,7 +2,6 @@
 	pageEncoding="utf-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <body>
 
 
@@ -118,8 +117,7 @@
 									<a class="h6 text-decoration-none text-truncate" href='<c:url value="/product-detail/${item.idCourse}"></c:url> '>${item.nameCourse }</a>
 									<div
 										class="d-flex align-items-center justify-content-center mt-2">
-										<h5><fmt:formatNumber type="number" pattern="###,###,###.##"
-												value="${item.price}  " /> VNĐ</h5>
+										<h5>${item.price}</h5>
 
 									</div>
 									<div

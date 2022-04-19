@@ -307,7 +307,7 @@
 									class="fa fa-star text-primary mr-1"></small> <small
 									class="fa fa-star text-primary mr-1"></small> <small
 									class="fa fa-star text-primary mr-1"></small> <small
-									class="fa fa-star text-primary mr-1"></small> <small>(99)</small>
+									class="fa fa-star text-primary mr-1"></small> <small></small>
 							</div>
 							<div class="socials-share">
 								<a class="bg-facebook" style="color: blue;"
